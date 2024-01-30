@@ -15,6 +15,10 @@
 		6A05FBA62B67A57400CA08E5 /* SearchBarSwiftUI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6A05FBA42B67A57400CA08E5 /* SearchBarSwiftUI.xcdatamodeld */; };
 		6A05FBAD2B67A73800CA08E5 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A05FBAC2B67A73800CA08E5 /* SearchBarView.swift */; };
 		6A05FBAF2B67CFF500CA08E5 /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A05FBAE2B67CFF400CA08E5 /* NetworkLayer.swift */; };
+		6A06E0712B691F420096C7A9 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A06E0702B691F420096C7A9 /* HTTP.swift */; };
+		6A06E0732B691F5A0096C7A9 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A06E0722B691F5A0096C7A9 /* Endpoint.swift */; };
+		6A06E0762B6920B30096C7A9 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A06E0752B6920B30096C7A9 /* Post.swift */; };
+		6AA722812B698BEA005FBB93 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA722802B698BEA005FBB93 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +31,10 @@
 		6A05FBA52B67A57400CA08E5 /* SearchBarSwiftUI.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SearchBarSwiftUI.xcdatamodel; sourceTree = "<group>"; };
 		6A05FBAC2B67A73800CA08E5 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		6A05FBAE2B67CFF400CA08E5 /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
+		6A06E0702B691F420096C7A9 /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
+		6A06E0722B691F5A0096C7A9 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		6A06E0752B6920B30096C7A9 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		6AA722802B698BEA005FBB93 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +67,8 @@
 		6A05FB982B67A57200CA08E5 /* SearchBarSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				6A06E0742B6920A90096C7A9 /* Models */,
+				6A06E06F2B691F2D0096C7A9 /* API */,
 				6A05FBB02B67CFFB00CA08E5 /* NetworkManager */,
 				6A05FB992B67A57200CA08E5 /* SearchBarSwiftUIApp.swift */,
 				6A05FB9B2B67A57200CA08E5 /* ContentView.swift */,
@@ -67,6 +77,7 @@
 				6A05FBA22B67A57400CA08E5 /* Persistence.swift */,
 				6A05FBA42B67A57400CA08E5 /* SearchBarSwiftUI.xcdatamodeld */,
 				6A05FB9F2B67A57400CA08E5 /* Preview Content */,
+				6AA722802B698BEA005FBB93 /* Constants.swift */,
 			);
 			path = SearchBarSwiftUI;
 			sourceTree = "<group>";
@@ -85,6 +96,23 @@
 				6A05FBAE2B67CFF400CA08E5 /* NetworkLayer.swift */,
 			);
 			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		6A06E06F2B691F2D0096C7A9 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				6A06E0702B691F420096C7A9 /* HTTP.swift */,
+				6A06E0722B691F5A0096C7A9 /* Endpoint.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		6A06E0742B6920A90096C7A9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6A06E0752B6920B30096C7A9 /* Post.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,9 +187,13 @@
 			files = (
 				6A05FBAF2B67CFF500CA08E5 /* NetworkLayer.swift in Sources */,
 				6A05FBAD2B67A73800CA08E5 /* SearchBarView.swift in Sources */,
+				6A06E0732B691F5A0096C7A9 /* Endpoint.swift in Sources */,
+				6A06E0712B691F420096C7A9 /* HTTP.swift in Sources */,
 				6A05FBA32B67A57400CA08E5 /* Persistence.swift in Sources */,
 				6A05FB9C2B67A57200CA08E5 /* ContentView.swift in Sources */,
 				6A05FB9A2B67A57200CA08E5 /* SearchBarSwiftUIApp.swift in Sources */,
+				6AA722812B698BEA005FBB93 /* Constants.swift in Sources */,
+				6A06E0762B6920B30096C7A9 /* Post.swift in Sources */,
 				6A05FBA62B67A57400CA08E5 /* SearchBarSwiftUI.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
