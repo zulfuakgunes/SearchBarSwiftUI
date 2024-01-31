@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SearchBarView: View {
+    let service = APIService()
+    
     @State private var searchText = ""
     @State private var items = ["Elma", "Armut", "Muz", "Portakal"]  // Örnek liste öğeleri
     @State private var filteredItems = [String]()
@@ -22,7 +24,10 @@ struct SearchBarView: View {
                 filterItems()  // searchText değiştiğinde öğeleri filtreleyin
             }
             .navigationTitle("Öğeler")
-            .onAppear(perform: filterItems)  // View yüklendiğinde ilk öğeleri filtreleyin
+            .onAppear{
+                    filterItems()
+                
+            }  // View yüklendiğinde ilk öğeleri filtreleyin
         }
     }
     
