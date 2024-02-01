@@ -16,8 +16,11 @@ struct SearchBarView: View {
     
     var body: some View {
         NavigationView {
-            List(filteredItems, id: \.self) { item in
-                Text(item)
+            List {
+                ForEach(filteredItems, id: \.self) { item in
+                    Text(item)
+                }
+                .onDelete(perform: deleteItems)  // Silme özelliğini ekleyin
             }
             .searchable(text: $searchText, prompt: "Ara")  // Searchable modifier'ını ekleyin
             .onChange(of: searchText) { newValue in
@@ -25,18 +28,29 @@ struct SearchBarView: View {
             }
             .navigationTitle("Öğeler")
             .onAppear{
-                    filterItems()
+                filterItems()
                 
             }  // View yüklendiğinde ilk öğeleri filtreleyin
         }
     }
     
-
+    
     func filterItems() {
-            if searchText.isEmpty {
-                filteredItems = items
-            } else {
-                filteredItems = items.filter { $0.localizedCaseInsensitiveContains(searchText) }
-            }
+        if searchText.isEmpty {
+            filteredItems = items
+        } else {
+            filteredItems = items.filter { $0.localizedCaseInsensitiveContains(searchText) }
         }
+    }
+    
+    func deleteItems(at offsets: IndexSet) {
+        withAnimation {
+            // İlk olarak, filteredItems'dan silin.
+            filteredItems.remove(atOffsets: offsets)
+            
+            // Daha sonra, items'dan da silin. Bu işlemi, filtrelenmiş öğelerin indexlerini orijinal listeye çevirerek yapın.
+            let deletedItems = offsets.map { filteredItems[$0] }
+            items = items.filter { !deletedItems.contains($0) }
+        }
+    }
 }
