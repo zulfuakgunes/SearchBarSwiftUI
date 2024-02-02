@@ -47,8 +47,5 @@ class APIService: Service {
                 return
             }
         }.resume()
-        
     }
-    
-    
 }
