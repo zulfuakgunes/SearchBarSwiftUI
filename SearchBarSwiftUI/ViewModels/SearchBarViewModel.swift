@@ -10,7 +10,7 @@ import Foundation
 class SearchBarViewModel: ObservableObject {
     let service = APIService()
     
-    @Published var items = [Post]()//["Elma", "Armut", "Muz", "Portakal"]  // Örnek liste öğeleri
+    @Published var items = [Post]()
     @Published var filteredItems = [Post]()
     
     func deleteItems(at offsets: IndexSet) {

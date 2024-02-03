@@ -11,11 +11,18 @@ struct SearchBarView: View {
     @StateObject private var viewModel: SearchBarViewModel = SearchBarViewModel()
     @State var searchText = ""
     
+    
     var body: some View {
         NavigationView {
             List {
                 ForEach(viewModel.filteredItems, id: \.self) { item in
                     Text(item)
+                    Spacer()
+                                    Image(systemName: item.isFavorite ? "star.fill" : "star")
+                                        .foregroundColor(item.isFavorite ? .yellow : .gray)
+                                        .onTapGesture {
+                                            item.isFavorite.toggle()
+                                        }
                 }
                 .onDelete {indexSet in
                     withAnimation {
@@ -24,7 +31,7 @@ struct SearchBarView: View {
                 }
             }// Silme özelliğini ekleyin
         }
-        .searchable(text: $searchText, prompt: "Ara")  // Searchable modifier'ını ekleyin
+         .searchable(text: $searchText, prompt: "Ara")  // Searchable modifier'ını ekleyin
         .onChange(of: searchText) { newValue in
             filterItems()  // searchText değiştiğinde öğeleri filtreleyin
         }
